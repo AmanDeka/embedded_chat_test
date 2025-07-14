@@ -74,6 +74,7 @@
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+		
 
 			embeddedservice_bootstrap.init(
 				'00DKd00000K3bKg',
@@ -83,6 +84,9 @@
 					scrt2URL: 'https://ac1744622081511.my.salesforce-scrt.com'
 				}
 			);
+
+			embedded_svc.settings.widgetWidth = "30px"
+			embedded_svc.settings.widgetHeight = "30px"
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
