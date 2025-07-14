@@ -85,8 +85,14 @@
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-			embeddedservice_bootstrap.settings.widgetWidth = '200px'
-			embeddedservice_bootstrap.settings.widgetHeight = '200px'
+			window.addEventListener("onEmbeddedMessagingReady", () => {
+    				console.log("Received the onEmbeddedMessagingReady event…");
+
+    // Send data to Salesforce
+    				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"first_name" : "aman"});
+
+    // Remove any items from the previous list that you don't want to send
+			});
 
 			embeddedservice_bootstrap.init(
 				'00DKd00000K3bKg',
